@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+.menuParentDiv{
+    background: red;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.divForAhref{
+ flex-basis: 25%;
+ text-align: center;
+ font-size: 22px;
+ font-family: fantasy;
+
+}
