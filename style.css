@@ -10,7 +10,6 @@ body{
     overflow: hidden;
 }
 .menuParentDiv{
-    background: red;
     height: 75%;
     width: 75%;
     display: flex;
@@ -20,9 +19,21 @@ body{
     align-items: center;
 }
 .divForAhref{
- flex-basis: 25%;
+ width: 25%;
  text-align: center;
  font-size: 22px;
  font-family: fantasy;
-
+ height: 100%;
+}
+.menuA{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.menuA img{
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
 }
