@@ -1,7 +1,9 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +11,8 @@ body{
     padding: 20px;
     overflow: hidden;
 }
-.menuParentDiv{
+
+.menuParentDiv {
     height: 75%;
     width: 75%;
     display: flex;
@@ -18,22 +21,57 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.divForAhref{
- width: 25%;
- text-align: center;
- font-size: 22px;
- font-family: fantasy;
- height: 100%;
+
+.divForAhref {
+    width: 24%;
+    text-align: center;
+    font-size: 22px;
+    font-family: fantasy;
+    height: 100%;
+    transition: 0.7s;
+    position: relative;
 }
-.menuA{
+
+.divForAhref:hover {
+    transform: scale(1.05);
+}
+
+.menuA {
     display: block;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.menuA img{
+
+.menuA img {
     height: 100%;
     width: 100%;
     display: block;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+}
+
+.divForAhref:hover .overlay {
+    opacity: 1;
+}
+
+.overlayText {
+    color: white;
+    font-size: 25px;
+    font-weight:400
 }
