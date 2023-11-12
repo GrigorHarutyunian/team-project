@@ -19,9 +19,9 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
 
     if (typeof data[0]['currencies'] === 'object') {
       const curr = Object.values(data[0]['currencies'])[0];
-      const currency = `${curr['name']} ${curr['symbol']}`;
+      const currency = `${curr['symbol']} ${curr['name']}`;
       const countryCurrency = document.createElement('span')
-      countryCurrency.innerText = currency;
+      countryCurrency.innerText = `Currency - ${currency}`;
       content.append(countryCurrency);
     } 
 
@@ -29,7 +29,7 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
     if (capital) {
       capital = capital.join('');
       const countryCapital = document.createComment('span');
-      countryCapital.innerText = capital;
+      countryCapital.innerText = `Capital - ${capital}`;
       content.append(countryCapital);
     }
 
@@ -37,14 +37,14 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
     const region = data[0]['region'];
     if (region) {
       const countryRegion = document.createElement('span');
-      countryRegion.innerText = region;
+      countryRegion.innerText = `Region - ${region}`;
       content.append(countryRegion);
     }
   
     const subregion = data[0]['subregion'];
     if (subregion) {
         const countrySubRegion = document.createElement('span');
-        countrySubRegion.innerText = subregion;
+        countrySubRegion.innerText = `Subregeon - ${subregion}`;
         content.append(countrySubRegion);
     }
 
@@ -52,42 +52,42 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
     if (languages) {
       languages = Object.values(languages).join(' ,');
       const countryLanguages = document.createElement('span');
-      countryLanguages.innerText = languages;
+      countryLanguages.innerText = `Languages - ${languages}`;
       content.append(countryLanguages);
     }
 
     const latlng = data[0]['latlng'].join(' ,');
     const countryLatLng = document.createElement('span');
-    countryLatLng.innerText = latlng;
+    countryLatLng.innerText = `Latitude & Longitude - ${latlng}`;
     content.append(countryLatLng);
 
     const area = data[0]['area'];
     if (area) {
         const countryArea = document.createElement('span');
-        countryArea.innerText = area;
+        countryArea.innerText = `Area - ${area}`;
         content.append(countryArea);
     }
       
     const population = data[0]['population'];
     if (population) {
         const countryPopulation = document.createElement('span');
-        countryPopulation.innerText = population;
+        countryPopulation.innerText = `Population - ${population}`;
         content.append(countryPopulation);
     } 
 
     const timezones = data[0]['timezones'].join(' ,');
     const countryTimezones = document.createElement('span');
-    countryTimezones.innerText = timezones;
+    countryTimezones.innerText = `Timezones - ${timezones}`;
     content.append(countryTimezones);
 
     const continents = data[0]['continents'][0];
     const countryContinents = document.createElement('span');
-    countryContinents.innerText = continents;
+    countryContinents.innerText = `Continents - ${continents}`;
     content.append(countryContinents);
 
     const startOfWeek = data[0]['startOfWeek'];
     const countryStartOfWeek = document.createElement('span');
-    countryStartOfWeek.innerText = startOfWeek;
+    countryStartOfWeek.innerText = `Start of week - ${startOfWeek}`;
     content.append(countryStartOfWeek);
 
     let googleMaps = data[0]['maps']['googleMaps'];

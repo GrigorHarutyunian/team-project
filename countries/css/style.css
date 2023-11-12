@@ -89,13 +89,13 @@ nav {
     width: 100%;
     padding: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background: #ffffffcc;
+    background: #ffffffeb;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-nav form{
+nav form {
     width: 100%;
     padding: 20px;
 }
@@ -112,12 +112,12 @@ nav form input {
     transition: .5s ease-in-out;
 }
 
-nav form input:hover{
+nav form input:hover {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     transition: .5s ease-in-out;
 }
 
-nav img{
+nav img {
     width: 100px;
     height: auto;
 }
