@@ -117,7 +117,81 @@ nav form input:hover {
     transition: .5s ease-in-out;
 }
 
+nav form input:focus-visible {
+    outline: none;
+}
+
 nav img {
     width: 100px;
     height: auto;
+}
+
+.detail {
+    min-height: 100vh;
+}
+
+.detail .country {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.detail .country .flag{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.detail .country .flag img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.detail .country .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #fff;
+}
+
+.detail .country h2 {
+    margin-bottom: 25px;
+}
+
+.detail .country .content span {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.detail .country .content a {
+    padding: 10px;
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    border-radius: 5px;
+    color: #fff;
+    min-width: 200px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.detail .logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.detail .logo a img {
+    width: 200px;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #fff;
 }

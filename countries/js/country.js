@@ -16,6 +16,9 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
     const content = document.createElement('div')
     content.setAttribute('class', 'content');
     country.append(content);
+    const countryName = document.createElement('h2');
+    countryName.innerText = name;
+    content.append(countryName);
 
     if (typeof data[0]['currencies'] === 'object') {
       const curr = Object.values(data[0]['currencies'])[0];
@@ -50,13 +53,13 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
 
     let languages = data[0]['languages'];
     if (languages) {
-      languages = Object.values(languages).join(' ,');
+      languages = Object.values(languages).join(', ');
       const countryLanguages = document.createElement('span');
       countryLanguages.innerText = `Languages - ${languages}`;
       content.append(countryLanguages);
     }
 
-    const latlng = data[0]['latlng'].join(' ,');
+    const latlng = data[0]['latlng'].join(', ');
     const countryLatLng = document.createElement('span');
     countryLatLng.innerText = `Latitude & Longitude - ${latlng}`;
     content.append(countryLatLng);
@@ -75,7 +78,7 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
         content.append(countryPopulation);
     } 
 
-    const timezones = data[0]['timezones'].join(' ,');
+    const timezones = data[0]['timezones'].join(', ');
     const countryTimezones = document.createElement('span');
     countryTimezones.innerText = `Timezones - ${timezones}`;
     content.append(countryTimezones);
