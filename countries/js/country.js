@@ -69,7 +69,7 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
     }
       
     const population = data[0]['population'];
-    if(population){
+    if (population) {
         const countryPopulation = document.createElement('span');
         countryPopulation.innerText = population;
         content.append(countryPopulation);
@@ -92,8 +92,7 @@ fetch(`https://restcountries.com/v3.1/name/${name}`).then(data => data.json()).t
 
     let googleMaps = data[0]['maps']['googleMaps'];
     const countryGoogleMaps = document.createElement('a');
-    countryGoogleMaps.setAttribute('href',googleMaps)
+    countryGoogleMaps.setAttribute('href',googleMaps);
     countryGoogleMaps.innerText = 'Map';
     content.append(countryGoogleMaps);
-
 })
