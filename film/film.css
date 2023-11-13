@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140vh;
+    padding: 20px;
+}
+.parentDiv{
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 15px;
+
+
+}
+.elemClass{
+    width: 26%;
+    border: solid black 1px;
+    border-radius: 10px;
+    height: 265px;
+    margin-top: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.divStyleInElem{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.picStyleInElem{
+    height: 100%;
+    width: 87%;
+    border-radius: 10px;
+}
+
+.divForButtonStyleInElem{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 13px;
+}
+
+/* .buttonStyleInElem{
+   
+} */
+.spanStyleInElem{
+    margin-left: 20px;
+}
+
+@media (max-width: 500px) {
+    .parentDiv {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .elemClass {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .buttonStyleInElem {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .spanStyleInElem {
+      margin-left: 0;
+    }
+  }
