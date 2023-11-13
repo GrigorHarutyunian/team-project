@@ -1,4 +1,4 @@
-fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data => {
+fetch('https://restcountries.com/v3.1/independent?fields=name,flags').then(data => data.json()).then(data => {
   for (i in data) {
     const countries = document.getElementById('countriesList');
     const country = document.createElement('div');
