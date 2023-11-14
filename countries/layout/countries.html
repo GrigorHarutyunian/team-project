@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/style.css"></link>
     <title>Countries</title>
 </head>
-<body>
+<body class="scroll_effect">
     <main>
         <div class="container">
             <nav id="nav">
@@ -17,8 +17,8 @@
                     <img src="../images/logo/logo.png" alt="Countries">
                 </a>
                 <form class='search' autocomplete='off'>
-                    <input type='text' id='filter' onkeyup='filterSearch()' placeholder='Search country...' class=''>
-                    <div id="autocomplate"></div>
+                    <input type='text' id='filter' onkeyup='filterSearch(event)' placeholder='Search country...' class=''>
+                    <div id="autocomplete" class="autocomplete_box scroll_effect"></div>
                 </form>
             </nav>
             <h1 class="title">Countries</h1>

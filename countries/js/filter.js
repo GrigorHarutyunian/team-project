@@ -4,13 +4,19 @@ function clear(element) {
     }
 }
 
+function changeText(element) {
+    const input = document.getElementById('filter');
+    input.value = element.textContent;
+    filterSearch();
+}
+
 function filterSearch() {
     const input = document.getElementById('filter');
     const filter = input.value.toUpperCase();
     const title = document.querySelectorAll('.country .content h3');
-    const autocomplate = document.getElementById('autocomplate');
+    const autocomplete = document.getElementById('autocomplete');
 
-    clear(autocomplate);
+    clear(autocomplete);
 
     for (i = 0; i < title.length; i++) {
         title_text = title[i].textContent.toUpperCase();
@@ -19,7 +25,10 @@ function filterSearch() {
             title[i].closest('.country').style.display = "";
             const name = document.createElement('p');
             name.innerText = title[i].textContent;
-            autocomplate.append(name);
+
+            name.setAttribute('onclick', 'changeText(this)');
+
+            autocomplete.append(name);
         } else {
             title[i].closest('.country').style.display = 'none';
         }
@@ -27,7 +36,6 @@ function filterSearch() {
 }
 
 document.addEventListener('click', () => {
-    const autocomplate = document.getElementById('autocomplate');
-
-    clear(autocomplate);
+    const autocomplete = document.getElementById('autocomplete');
+    clear(autocomplete);
 })
