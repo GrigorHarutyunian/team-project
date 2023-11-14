@@ -117,7 +117,8 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
 
     let googleMaps = data[i]['maps']['googleMaps'];
     const countryGoogleMaps = document.createElement('a');
-    countryGoogleMaps.setAttribute('href',googleMaps);
+    countryGoogleMaps.setAttribute('href', googleMaps);
+    countryGoogleMaps.setAttribute('target', 'blank');
     countryGoogleMaps.innerText = 'Map';
     countryContent.append(countryGoogleMaps);
   }
