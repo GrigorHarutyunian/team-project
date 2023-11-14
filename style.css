@@ -77,6 +77,24 @@ body {
     display: block;
 }
 
+@media (max-width: 1200px) {
+    .menuParentDiv {
+        width: 100%;
+    }    
+}
+
+@media (max-width: 1024px) {
+    .divForAhref {
+        width: 49%;
+        margin-bottom: 2%;
+        height: 75vh;
+    }
+
+    body {
+        overflow: scroll;
+        height: auto;
+    }
+}
 
 @media (max-width: 500px) {
     .divForAhref {

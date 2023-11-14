@@ -214,10 +214,12 @@ nav form input:hover,
 @media only screen and (max-width: 968px) {
     .title { 
         font-size: 41px;
+        margin-top: 120px;
     }
 
     .countries {
         columns: 3;
+        margin-top: 0;
     }
 } 
 
