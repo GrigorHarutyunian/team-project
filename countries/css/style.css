@@ -16,16 +16,28 @@ body {
 }
 
 nav {
-    position: fixed;
-    z-index: 1;
+    position:  absolute;
     top: 0;
+    left: 0;
     width: 100%;
     padding: 10px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background: #ffffffeb;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    transition: .3s ease-in-out;
+    z-index: 1;
+}
+
+nav.sticky {
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: .3s ease-in-out;
+    z-index: 1;
+    padding: 3px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 nav form {
@@ -186,7 +198,7 @@ nav img {
     font-size: 50px;
     color: #fff;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 125px;
     color: #f3f3f3;
     text-shadow: 0 13.36px 8.896px #00000033, 0 -2px 1px #fff;
     transition: 1s ease-in-out;
@@ -214,7 +226,7 @@ nav form input:hover,
 @media only screen and (max-width: 968px) {
     .title { 
         font-size: 41px;
-        margin-top: 120px;
+        margin-top: 97px;
     }
 
     .countries {
