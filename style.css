@@ -73,5 +73,22 @@ body {
 .overlayText {
     color: white;
     font-size: 25px;
-    font-weight:400
+    font-weight:400;
+    display: block;
 }
+
+
+@media (max-width: 500px) {
+    .divForAhref {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .menuA {
+      width: 100%;
+      margin-top: 10px;
+    }
+    body{
+        overflow: scroll;
+    }
+  }
