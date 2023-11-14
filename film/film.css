@@ -3,15 +3,16 @@
 }
 
 body {
-    background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 140vh;
-    padding: 20px;
+  background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+  padding: 20px;
+}
+.logoInPage{
+  height: 57px;
+    width: 64px;
+    margin-left: 29px;
 }
 .parentDiv{
-    width: 65%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -20,15 +21,20 @@ body {
 
 }
 .elemClass{
-    width: 26%;
-    border: solid black 1px;
-    border-radius: 10px;
-    height: 265px;
-    margin-top: 23px;
+    width: 17%;
+    height: 219px;
+    margin-top: 63px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 22px;
+    font-family: fantasy;
+    color: aliceblue; 
 
+}
+.elemClass:hover{
+  transform: scale(1.1);
 }
 
 .divStyleInElem{
@@ -39,23 +45,10 @@ body {
 } 
 
 .picStyleInElem{
-    height: 100%;
-    width: 87%;
-    border-radius: 10px;
+    height: 90%;
+    width: 100%;
 }
 
-.divForButtonStyleInElem{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 13px;
-}
-
-/* .buttonStyleInElem{
-   
-} */
-.spanStyleInElem{
-    margin-left: 20px;
-}
 
 @media (max-width: 500px) {
     .parentDiv {
@@ -65,12 +58,7 @@ body {
   
     .elemClass {
       width: 100%;
-      margin-top: 10px;
-    }
-  
-    .buttonStyleInElem {
-      width: 100%;
-      margin-left: 0;
+      margin-top: 23x;
     }
   
     .spanStyleInElem {
