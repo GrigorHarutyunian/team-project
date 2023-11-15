@@ -144,9 +144,10 @@
     max-width: 80%;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     column-gap: 8px;
+    overflow-x: scroll;
 }
 
 .books__pagination button {
@@ -166,6 +167,11 @@
     font-weight: 700;
     color: #fff;
     transition: all .4s ease-in-out;
+}
+
+.books__pagination button.active {
+    background-color: #ff8f00;
+    color: #525252;
 }
 
 .books__pagination button:hover {
