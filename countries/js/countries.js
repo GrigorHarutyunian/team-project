@@ -1,3 +1,12 @@
+window.onload = function() {
+  setTimeout(load, 1000);
+}
+
+function load() {
+	const load = document.getElementById('loading')
+ 	load.style.display = 'none';
+}
+
 fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data => {
   for (i in data) {
     const countries = document.getElementById('countriesList');
@@ -128,4 +137,4 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryGoogleMaps.innerText = 'Map';
     countryContent.append(countryGoogleMaps);
   }
-})
+});
