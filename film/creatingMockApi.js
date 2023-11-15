@@ -185,36 +185,8 @@
 //   });
 // }
 
-// //   postData.image = img[x - 1];
-// //    fetch(`${url}/11`, {
-// //     method: "DELETE",
-// //  });
-
-//
-//function putNewInfoInDataBaseAfterDeleteOneItem(url,arr,infoName){
-// let y = 1;
-// for (let x = 1; x < descriptions.length + 1; x++) {
-//   const data = {
-//     [infoName]: ""
-//   };
-//   if (x === 11) {
-//     y = 2;
-//     continue;
-//   }
-//
-//   data[infoName] = arr[x - y];
-//   fetch(`${url}/${x}`, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(data)
-//   });
-// }
-//}
-
 //putNewInfoInDataBase(url,img,"image")
 //putNewInfoInDataBase(url,armenianMovies,"title")
-//putNewInfoInDataBaseAfterDeleteOneItem(url,description,"description")
-//putNewInfoInDataBaseAfterDeleteOneItem(url,bigImage,"big")
-//putNewInfoInDataBaseAfterDeleteOneItem(url,year,"year")
+//putNewInfoInDataBase(url,description,"description")
+//putNewInfoInDataBase(url,bigImage,"big")
+//putNewInfoInDataBase(url,year,"year")
