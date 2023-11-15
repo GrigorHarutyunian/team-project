@@ -7,36 +7,56 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href='../images/favicon.ico' type='image/x-icon'>
     <link rel="shortcut icon" href='../images/favicon.ico' type='image/x-icon'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Books</title>
 </head>
 <body>
     <div class="books__outer-wrapper">
         <div class="books__container">
             <header class="books__header">
-                <div class="books__logo-wrapper">
+                <div class="books__logo-wrapper"
+                     data-aos="zoom-in"
+                     data-aos-delay="400"
+                     data-aos-duration="800"
+                     data-aos-easing="ease-in-out"
+                     data-aos-mirror="false"
+                >
                     <img class="books__logo" src="./assets/img.png" alt="books logo">
                 </div>
 
-                <h1 class="books__title">
+                <h1 class="books__title"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="800"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="false"
+                >
                     Search Books
                 </h1>
             </header>
 
 
-            <div class="books__search-form-wrapper">
-                <form class="books__search-form" id="searchForm">
-                    <div class="books__search-form-row">
-                        <label class="books__search-form-label" for="bookInput">
-                            Enter Book Name:
-                        </label>
+            <div data-aos="fade-in"
+                 data-aos-delay="600"
+                 data-aos-duration="800"
+                 data-aos-easing="ease-in-out"
+                 data-aos-mirror="false"
+            >
+                <div class="books__search-form-wrapper">
+                    <form class="books__search-form" id="searchForm">
+                        <div class="books__search-form-row">
+                            <label class="books__search-form-label" for="bookInput">
+                                Enter Book Name:
+                            </label>
 
-                        <input class="books__search-form-input" type="text" id="bookInput" placeholder="e.g., The Lord of the Rings">
+                            <input class="books__search-form-input" type="text" id="bookInput" placeholder="e.g., The Lord of the Rings">
 
-                        <button class="books__search-form-button">
-                            Search
-                        </button>
-                    </div>
-                </form>
+                            <button class="books__search-form-button">
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <div class="books__results" id="results"></div>
@@ -46,6 +66,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
