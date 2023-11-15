@@ -32,7 +32,9 @@ body {
     font-family: fantasy;
     color: aliceblue; 
     transition: transform 0.3s ease; 
-
+    width: 200px;
+    margin: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .elemClass:hover{
   transform: scale(1.1);
@@ -68,7 +70,7 @@ body {
   margin: 7% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 69%;
+  width: 97%;
   height: 80%;
   position: relative;
   animation: slideIn 0.5s ease-out; 
@@ -89,8 +91,10 @@ body {
     grid-row: 1/4;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 20px;
+    margin-top: 35px;
 }
 .madalImg{
   width: 100%;
@@ -100,6 +104,7 @@ body {
 .modalText{
   margin-top: 15px;
   text-align: center;
+  letter-spacing: 2px;
 }
 .modalTextYear{
   text-align: center;
@@ -117,6 +122,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     height: 34px;
+}
+
+.spanStyleInElem {
+  width: 200px;
+  text-align: center;
 }
 @keyframes slideDown {
   from {
@@ -138,6 +148,37 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  .modalText {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalText {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    grid-template-columns: 1fr;
+  }
+
+  .divForModalText,
+  .divForModalImg {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .divForModalImg {
+    margin-top: 30px;
+  }
+
+  .divForModalText {
+    margin-top: 0;
+  }
+}
 
 @media (max-width: 500px) {
     .parentDiv {
@@ -146,8 +187,7 @@ body {
     }
   
     .elemClass {
-      width: 100%;
-      margin-top: 23x;
+      margin-top: 23px;
     }
   
     .spanStyleInElem {
