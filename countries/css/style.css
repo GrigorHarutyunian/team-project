@@ -390,6 +390,18 @@ nav form input:hover,
     }  
 }
 
+@media (max-width: 600px) {
+    .modalContent {
+        grid-template-columns: 1fr !important;
+    }
+
+    .divForModalImg,
+    .divForModalText {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
 @media only screen and (max-width: 576px) {
 
     .modal .content h3 {
