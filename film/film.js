@@ -44,7 +44,7 @@ function showModal() {
 
   const modalCloseButton = document.createElement("button");
   modalCloseButton.setAttribute("class", "modalCloseButton");
-  modalCloseButton.innerHTML = "X";
+  modalCloseButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
 
   const modalText = document.createElement("span");
   modalText.setAttribute("class", "modalText");
@@ -55,7 +55,16 @@ function showModal() {
   const modalTextYear = document.createElement("span");
   modalTextYear.setAttribute("class", "modalTextYear");
 
-  divForModalText.append(modalText, modalTextYear, modalCloseButton);
+  const divForVideo = document.createElement("div");
+  divForVideo.setAttribute("class", "divForVideo");
+  divForVideo.innerHTML = `<i class="fa-brands fa-youtube fa-beat fa-2xl" style="color: #ff0033;"></i>`;
+
+  divForModalText.append(
+    modalText,
+    modalTextYear,
+    modalCloseButton,
+    divForVideo
+  );
   modalContent.append(divForModalImg, divForModalText);
   modal.append(modalContent);
   return modal;
@@ -66,7 +75,17 @@ function hideModal() {
   modal.style.display = "none";
   document.body.style.overflow = "auto";
 }
-let helpingValue = 1;
+
+function showModalVideo(list) {
+  const modal = document.createElement("div");
+  modal.setAttribute("class", "myModalVideo");
+  modal.style.display = "block";
+  modal.innerHTML = `<iframe heigth="70px" width="300px" src=${list.video}></iframe>`;
+  const divForModalText = document.querySelector(".divForModalText");
+  divForModalText.append(modal);
+  const divForVideo = document.querySelector(".divForVideo");
+  divForVideo.style.display = "none";
+}
 
 async function init(url) {
   await createElemsInMenu(url);
@@ -83,10 +102,14 @@ async function init(url) {
       const modalText = document.querySelector(".modalText");
       const modalTextYear = document.querySelector(".modalTextYear");
       const modalButton = document.querySelector(".modalCloseButton");
+      const divForVideo = document.querySelector(".divForVideo");
       divModalImg.style.backgroundImage = `url(${uniqueElemList.big})`;
       modalText.innerText = uniqueElemList.description;
       modalTextYear.innerText = uniqueElemList.year;
       modalButton.addEventListener("click", () => hideModal());
+      divForVideo.addEventListener("click", () =>
+        showModalVideo(uniqueElemList)
+      );
     });
   });
 }

@@ -124,6 +124,18 @@ body {
     height: 34px;
 }
 
+.divForVideo{
+  margin-top: 45px;
+}
+
+.myModalVideo{
+  margin: 4% auto;
+  padding: 0px;
+  width: 45%;
+  height: 118%;
+  animation: slideDown 0.5s ease-out;
+}
+
 .spanStyleInElem {
   width: 200px;
   text-align: center;
