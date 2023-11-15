@@ -16,11 +16,32 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 30px 15px;
+}
+
+.books__header {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto 30px;
+    padding: 0 80px;
+}
+
+.books__logo-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+}
+
+.books__logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .books__title {
-    padding-bottom: 25px;
     font-size: 50px;
     text-align: center;
     color: #fff;
