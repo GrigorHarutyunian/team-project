@@ -4,6 +4,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     const country = document.createElement('div');
     country.setAttribute('class', 'country');
     countries.append(country);
+    const name = data[i]['name']['official'];
 
     const countryFlag = document.createElement('div');
     countryFlag.setAttribute('class', 'flag');
@@ -12,6 +13,12 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     flag.setAttribute('src', flagSvg);
     countryFlag.append(flag);
     countryFlag.setAttribute('onclick', 'openModal(this)');
+    const cNameBox = document.createElement('div');
+    cNameBox.setAttribute('class', 'country_name_box');
+    const cNmae = document.createElement('h3');
+    cNmae.innerText = name;
+    cNameBox.append(cNmae);
+    countryFlag.append(cNameBox);
     country.append(countryFlag);
 
     const modal = document.createElement('div');
@@ -38,7 +45,6 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryContent.setAttribute('class', "content");
     modal.append(countryContent);
 
-    const name = data[i]['name']['official'];
     const countryName = document.createElement('h3');
     countryName.innerText = name;
     countryContent.append(countryName);
