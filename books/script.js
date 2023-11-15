@@ -1,8 +1,40 @@
 const apiUrl = 'https://openlibrary.org/search.json?q=';
 const resultsPerPage = 20;
+let currentPage = 1;
+
+async function getPage(pageNumber) {
+    currentPage = pageNumber;
+
+    const bookInput = document.getElementById('bookInput').value;
+    const apiUrlWithPage = `${apiUrl}${encodeURIComponent(bookInput)}&page=${pageNumber}&limit=${resultsPerPage}`;
+
+    try {
+        const response = await fetch(apiUrlWithPage);
+        const data = await response.json();
+
+        displayResults(data.docs);
+
+        updateActivePagination();
+    } catch (error) {
+        throw new Error('Error fetching data');
+    }
+}
+
+function updateActivePagination() {
+    const paginationButtons = document.querySelectorAll('#pagination button');
+    paginationButtons.forEach((button, index) => {
+        if (index + 1 === currentPage) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
 
 function displayResults(books) {
     const resultsContainer = document.getElementById('results');
+
+    resultsContainer.innerHTML = '';
 
     books.forEach(book => {
         resultsContainer.innerHTML += `
@@ -22,6 +54,9 @@ async function searchBooks() {
     const paginationContainer = document.getElementById('pagination');
 
     const apiUrlFirstPage = `${apiUrl}${bookInput}&limit=${resultsPerPage}`;
+
+    resultsContainer.innerHTML = '';
+    paginationContainer.innerHTML = '';
 
     try {
         const response = await fetch(apiUrlFirstPage);
@@ -49,4 +84,13 @@ document.getElementById('searchForm').addEventListener('submit', function (event
     event.preventDefault();
 
     searchBooks();
+});
+
+document.getElementById('pagination').addEventListener('click', function (event) {
+    if (event.target.tagName === 'BUTTON') {
+        const pageNumber = parseInt(event.target.textContent);
+        if (!isNaN(pageNumber)) {
+            getPage(pageNumber);
+        }
+    }
 });
