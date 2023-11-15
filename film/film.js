@@ -14,16 +14,16 @@ async function createElemsInMenu(url) {
       const elem = document.createElement("div");
       elem.setAttribute("class", "elemClass");
 
-      const picInElem = document.createElement("img");
-      picInElem.setAttribute("class", "picStyleInElem");
-      picInElem.src = obj.image;
+      const divPic = document.createElement("div");
+      divPic.setAttribute("class", "divForPic");
+      divPic.style.backgroundImage = `url(${obj.image})`;
 
       const titleInElem = document.createElement("span");
       titleInElem.setAttribute("class", "spanStyleInElem");
       titleInElem.innerText =
         obj.title.length > 15 ? obj.title.slice(0, 15) + "..." : obj.title;
 
-      elem.append(picInElem, titleInElem);
+      elem.append(divPic, titleInElem);
       return parentDiv.append(elem);
     });
   } catch (error) {
@@ -31,4 +31,64 @@ async function createElemsInMenu(url) {
   }
 }
 
-createElemsInMenu(url);
+function showModal() {
+  const modal = document.createElement("div");
+  modal.setAttribute("class", "myModal");
+  modal.style.display = "block";
+
+  const modalContent = document.createElement("div");
+  modalContent.setAttribute("class", "modalContent");
+
+  const divForModalImg = document.createElement("div");
+  divForModalImg.setAttribute("class", "divForModalImg");
+
+  const modalCloseButton = document.createElement("button");
+  modalCloseButton.setAttribute("class", "modalCloseButton");
+  modalCloseButton.innerHTML = "X";
+
+  const modalText = document.createElement("span");
+  modalText.setAttribute("class", "modalText");
+
+  const divForModalText = document.createElement("div");
+  divForModalText.setAttribute("class", "divForModalText");
+
+  const modalTextYear = document.createElement("span");
+  modalTextYear.setAttribute("class", "modalTextYear");
+
+  divForModalText.append(modalText, modalTextYear, modalCloseButton);
+  modalContent.append(divForModalImg, divForModalText);
+  modal.append(modalContent);
+  return modal;
+}
+
+function hideModal() {
+  const modal = document.querySelector(".myModal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+let helpingValue = 1;
+
+async function init(url) {
+  await createElemsInMenu(url);
+  const elems = document.querySelectorAll(".elemClass");
+  elems.forEach((elem, i) => {
+    elem.addEventListener("click", async () => {
+      const uniqueData = await fetch(`${url}/${i + 1}`);
+      const uniqueElemList = await uniqueData.json();
+      const modal = showModal();
+      parentDiv.prepend(modal);
+      document.body.style.overflow = "hidden";
+
+      const divModalImg = document.querySelector(".divForModalImg");
+      const modalText = document.querySelector(".modalText");
+      const modalTextYear = document.querySelector(".modalTextYear");
+      const modalButton = document.querySelector(".modalCloseButton");
+      divModalImg.style.backgroundImage = `url(${uniqueElemList.big})`;
+      modalText.innerText = uniqueElemList.description;
+      modalTextYear.innerText = uniqueElemList.year;
+      modalButton.addEventListener("click", () => hideModal());
+    });
+  });
+}
+
+init(url);

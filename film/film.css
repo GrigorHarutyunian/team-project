@@ -31,22 +31,111 @@ body {
     font-size: 22px;
     font-family: fantasy;
     color: aliceblue; 
+    transition: transform 0.3s ease; 
 
 }
 .elemClass:hover{
   transform: scale(1.1);
 }
 
-.divStyleInElem{
-    height: 70%;
+.divForPic{
+  width: 200px;
+  height: 193px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.divForModalImg{
+    background-size: cover;
+    background-position: inherit;
+}
+
+.myModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: slideDown 0.5s ease-out;
+
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: 7% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 69%;
+  height: 80%;
+  position: relative;
+  animation: slideIn 0.5s ease-out; 
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+   background:antiquewhite
+
+}
+
+.divForModalImg{
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+
+.divForModalText{
+  grid-column: 2/3;
+    grid-row: 1/4;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
+}
+.madalImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modalText{
+  margin-top: 15px;
+  text-align: center;
+}
+.modalTextYear{
+  text-align: center;
+}
 
-.picStyleInElem{
-    height: 90%;
-    width: 100%;
+.modalCloseButton{
+  width: 58px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #c2e59c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+}
+@keyframes slideDown {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      top: -300px;
+      opacity: 0;
+  }
+  to {
+      top: 50px;
+      opacity: 1;
+  }
 }
 
 
