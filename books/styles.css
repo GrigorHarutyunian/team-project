@@ -118,3 +118,35 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #525252;
 }
+
+.books__pagination {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.books__pagination button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 20px;
+    padding: 15px 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    transition: all .4s ease-in-out;
+}
+
+.books__pagination button:hover {
+    opacity: 0.6;
+}

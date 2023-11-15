@@ -30,6 +30,17 @@ async function searchBooks() {
         resultsContainer.innerHTML += `<div class="books__total-results">Total results: ${data.numFound}</div>`;
 
         displayResults(data.docs);
+
+        const totalPages = Math.ceil(data.numFound / resultsPerPage);
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            paginationContainer.appendChild(pageButton);
+
+            if (i === currentPage) {
+                pageButton.classList.add('active');
+            }
+        }
     } catch (error) {
         throw new Error('Error fetching data');
     }
