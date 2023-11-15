@@ -70,7 +70,13 @@
 
 .books__search-form-row {
     display: flex;
-    column-gap: 10px;
+    gap: 10px;
+}
+
+@media screen and (max-width: 640px) {
+    .books__search-form-row {
+        flex-direction: column;
+    }
 }
 
 .books__search-form-label {
