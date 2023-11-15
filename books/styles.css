@@ -26,9 +26,9 @@
     color: #fff;
 }
 
-.books__search-form-wrapper {
+.books__search-form-wrapper,
+.books__total-results {
     max-width: 80%;
-    margin: 0 auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -37,6 +37,10 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
     transition: all .4s ease-in-out;
+}
+
+.books__search-form-wrapper {
+    margin: 0 auto;
 }
 
 .books__search-form-wrapper:hover {
@@ -90,4 +94,11 @@
 
 .books__search-form-button:hover {
     background-color: #ff8f00;
+}
+
+.books__total-results {
+    margin: 30px auto;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #fff;
 }
