@@ -50,9 +50,11 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryContent.append(countryName);
 
     const ccapital = data[i]['capital'];
-    const countryCapital = document.createElement('span');
-    countryCapital.innerText = `Capital - ${ccapital}`;
-    countryContent.append(countryCapital);
+    if (capital) {
+      const countryCapital = document.createElement('span');
+      countryCapital.innerText = `Capital - ${ccapital}`;
+      countryContent.append(countryCapital);
+    }
 
     if (typeof data[i]['currencies'] === 'object') {
       const curr = Object.values(data[i]['currencies'])[0];
