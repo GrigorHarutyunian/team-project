@@ -1,5 +1,5 @@
 const parentDiv = document.querySelector(".parentDiv");
-const url = "https://65522b955c69a7790329a384.mockapi.io/movie/movie";
+const url = "https://65522b955c69a7790329a384.mockapi.io/movie/movie/";
 
 async function getDataFromApi(url) {
   try {
@@ -11,7 +11,10 @@ async function getDataFromApi(url) {
     }
     return data;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    parentDiv.style.background = "red";
+    parentDiv.style.margin = "300px";
+    parentDiv.innerText = "Please reload the page, something went wrong";
+    document.body.append(parentDiv);
   }
 }
 
@@ -55,16 +58,33 @@ function createElemsInMenu(data) {
   }
 
   drawAmenu(data);
+  let searcText = "";
   const searchInput = document.querySelector(".searchInputClass");
-  searchInput.addEventListener("input", async (evt) => {
+  searchInput.addEventListener("keyup", async (evt) => {
+    searcText = evt.target.value;
+    refresh();
+  });
+  let id;
+  function refresh() {
+    if (id !== undefined) {
+      clearTimeout(id);
+    }
+    id = setTimeout(() => {
+      render();
+    }, 500);
+  }
+
+  async function render() {
     let data = await getDataFromApi(url);
     data = data.filter((val) => {
-      return val.title.search(evt.target.value) !== -1;
+      return (
+        val.title.toLocaleLowerCase().search(searcText.toLocaleLowerCase()) !==
+        -1
+      );
     });
     parentDiv.innerHTML = "";
-
     drawAmenu(data);
-  });
+  }
 }
 
 function navBar() {
@@ -73,8 +93,7 @@ function navBar() {
   const iconForBackManu = document.createElement("a");
   iconForBackManu.href = "../index.html";
   const imgBack = document.createElement("img");
-  imgBack.style.width = "57px";
-  imgBack.style.height = "64px";
+  imgBack.setAttribute("class", "imgBackClass");
   imgBack.src =
     "../images/kisspng-website-house-home-world-wide-web-computer-icons-house-clip-art-5ab036bbf19551.9166615015214977879895.png";
   iconForBackManu.append(imgBack);
