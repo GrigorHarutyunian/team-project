@@ -13,11 +13,27 @@ document.getElementById('pagination').addEventListener('click', function (event)
         const pageNumber = parseInt(event.target.textContent);
         if (!isNaN(pageNumber)) {
             getPage(pageNumber);
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
     }
 });
 
+function resetSearch() {
+    currentPage = 1;
+    const resultsContainer = document.getElementById('results');
+    const paginationContainer = document.getElementById('pagination');
+
+    resultsContainer.innerHTML = '';
+    paginationContainer.innerHTML = '';
+}
+
 async function searchBooks() {
+    resetSearch();
+
     const bookInput = document.getElementById('bookInput').value;
     const resultsContainer = document.getElementById('results');
     const paginationContainer = document.getElementById('pagination');
