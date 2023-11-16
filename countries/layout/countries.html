@@ -9,23 +9,31 @@
     <link rel="stylesheet" href="../css/style.css"></link>
     <title>Countries</title>
 </head>
-<body class="scroll_effect">
+<body class="scroll_effect" id="body">
+    <div id="loading" class="loading_spinner">
+        <img src="../images/loading/loading.webp" alt="Loading">
+    </div>
     <main>
-        <div class="container">
-            <nav id="nav">
-                <a href="countries.html">
-                    <img src="../images/logo/logo.png" alt="Countries">
-                </a>
-                <form class='search' autocomplete='off'>
-                    <input type='text' id='filter' onkeyup='filterSearch(event)' placeholder='Search country...' class=''>
-                    <div id="autocomplete" class="autocomplete_box scroll_effect"></div>
-                </form>
-            </nav>
-            <h1 class="title">Countries</h1>
-            <section class="countries" id="countriesList">
-            </section>
-        </div>
+        <header id="header">
+            <div class="container">
+                <nav id="nav">
+                    <a href="countries.html">
+                        <img src="../images/logo/logo.png" alt="Countries">
+                    </a>
+                    <form class='search' autocomplete='off'>
+                        <input type='text' id='filter' onkeyup='filterSearch(event)' placeholder='Search country...' class=''>
+                        <div id="autocomplete" class="autocomplete_box scroll_effect"></div>
+                    </form>
+                </nav>
+                <h1 class="title">Countries</h1>
+            </div>
+        </header>
+        <section class="countries" id="countriesList"></section>
+        <footer id="footer">
+            <a href="#body" class="top" id="topButton">GO TO TOP</a>
+        </footer>
     </main>
+    <script src="../js/script.js"></script>
     <script src="../js/countries.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/filter.js"></script>

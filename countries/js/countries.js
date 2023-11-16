@@ -128,4 +128,4 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryGoogleMaps.innerText = 'Map';
     countryContent.append(countryGoogleMaps);
   }
-})
+});

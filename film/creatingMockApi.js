@@ -166,6 +166,43 @@
 //     1974
 //   ];
 
+// const video = [
+//     "https://www.youtube.com/embed/g4tjLCTHpkc",
+//     "https://www.youtube.com/embed/M6OdiXLk5w0",
+//     "https://www.youtube.com/embed/IA2UBwItTlI",
+//     "https://www.youtube.com/embed/i99K5xSeAao",
+//     "https://www.youtube.com/embed/RcxkqnaBLW4",
+//     "https://www.youtube.com/embed/YhCyKLsIH2k",
+//     "https://www.youtube.com/embed/eH7OpYtKOVA",
+//     "https://www.youtube.com/embed/VttQTOz77Yc",
+//     "https://www.youtube.com/embed/aBacMIMcXDU",
+//     "https://www.youtube.com/embed/yO8lGUufKpI",
+//     "https://www.youtube.com/embed/9CbMaPXC8SI",
+//     "https://www.youtube.com/embed/Cg9VVs5N51U",
+//     "https://www.youtube.com/embed/MWmqWCX-_gE",
+//     "https://www.youtube.com/embed/TIdcNenKSM4",
+//     "https://www.youtube.com/embed/0VbZuoSy5-Q",
+//     "https://www.youtube.com/embed/bjPhuhVn-i8",
+//     "https://www.youtube.com/embed/e0i1N2O9tXM",
+//     "https://www.youtube.com/embed/gD6UdYPEX2o",
+//     "https://www.youtube.com/embed/lHjxqk6A6Ig",
+//     "https://www.youtube.com/embed/EcSzk_FqPEc",
+//     "https://www.youtube.com/embed/_JGu5kUblxQ",
+//     "https://www.youtube.com/embed/dqKE4Bl2ZY4",
+//     "https://www.youtube.com/embed/rWO2QFDIE9Q",
+//     "https://www.youtube.com/embed/7nBOhzIiz5E",
+//     "https://www.youtube.com/embed/GgFLr2bjUNM",
+//     "https://www.youtube.com/embed/vrADJCT4IFA",
+//     "https://www.youtube.com/embed/YN9eZRXCiUo",
+//     "https://www.youtube.com/embed/YearmaLEOc4",
+//     "https://www.youtube.com/embed/wF7XYmtywaQ",
+//     "https://www.youtube.com/embed/HEoR_Dwbssw",
+//     "https://www.youtube.com/embed/h1xR3hrmODc",
+//     "https://www.youtube.com/embed/Sup6g273eN4",
+//     "https://www.youtube.com/embed/iLtp3tZNu00",
+//     "https://www.youtube.com/embed/OV_uARS9bYQ"
+//   ];
+
 // const url = "https://65522b955c69a7790329a384.mockapi.io/movie/movie/";
 
 // function putNewInfoInDataBase(url,arr,infoName){
@@ -185,36 +222,8 @@
 //   });
 // }
 
-// //   postData.image = img[x - 1];
-// //    fetch(`${url}/11`, {
-// //     method: "DELETE",
-// //  });
-
-//
-//function putNewInfoInDataBaseAfterDeleteOneItem(url,arr,infoName){
-// let y = 1;
-// for (let x = 1; x < descriptions.length + 1; x++) {
-//   const data = {
-//     [infoName]: ""
-//   };
-//   if (x === 11) {
-//     y = 2;
-//     continue;
-//   }
-//
-//   data[infoName] = arr[x - y];
-//   fetch(`${url}/${x}`, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(data)
-//   });
-// }
-//}
-
 //putNewInfoInDataBase(url,img,"image")
 //putNewInfoInDataBase(url,armenianMovies,"title")
-//putNewInfoInDataBaseAfterDeleteOneItem(url,description,"description")
-//putNewInfoInDataBaseAfterDeleteOneItem(url,bigImage,"big")
-//putNewInfoInDataBaseAfterDeleteOneItem(url,year,"year")
+//putNewInfoInDataBase(url,description,"description")
+//putNewInfoInDataBase(url,bigImage,"big")
+//putNewInfoInDataBase(url,year,"year")

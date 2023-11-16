@@ -6,11 +6,7 @@ body {
   background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
   padding: 20px;
 }
-.logoInPage{
-  height: 57px;
-    width: 64px;
-    margin-left: 29px;
-}
+
 .parentDiv{
     width: 100%;
     display: flex;
@@ -31,24 +27,209 @@ body {
     font-size: 22px;
     font-family: fantasy;
     color: aliceblue; 
-
+    transition: transform 0.3s ease; 
+    width: 200px;
+    margin: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .elemClass:hover{
   transform: scale(1.1);
 }
 
-.divStyleInElem{
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
-
-.picStyleInElem{
-    height: 90%;
-    width: 100%;
+.divForPic{
+  width: 200px;
+  height: 193px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.searchInputClass{
+  height: 50px;
+  width: 133px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: #22a6b3;
+  padding-right: 40px;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.nav{
+  display: flex;
+    align-items: center;
+}
+
+.searchInputClass:hover{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2)
+}
+.divForModalImg{
+    background-size: cover;
+    background-position: inherit;
+}
+
+.myModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: slideDown 1s ease-out;
+
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: 7% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 97%;
+  height: 80%;
+  position: relative;
+  animation: slideDown 1.2s ease-out; 
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+   background:antiquewhite
+
+}
+
+
+.myModal.closing {
+  animation: slideUp 1s ease-out;
+}
+
+.divForModalImg{
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+
+.divForModalText{
+  grid-column: 2/3;
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    margin-top: 35px;
+}
+.madalImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modalText{
+  margin-top: 15px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.modalTextYear{
+  text-align: center;
+}
+
+.modalCloseButton{
+  width: 58px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #c2e59c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+}
+
+.divForVideo{
+  margin-top: 45px;
+}
+
+.myModalVideo{
+  margin: 4% auto;
+  padding: 0px;
+  width: 45%;
+  height: 118%;
+  animation: slideDown 1.5s ease-out;
+}
+
+.spanStyleInElem {
+  width: 200px;
+  text-align: center;
+}
+@keyframes slideDown {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+
+@keyframes slideIn {
+  from {
+      top: -300px;
+      opacity: 0;
+  }
+  to {
+      top: 50px;
+      opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modalText {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalText {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    grid-template-columns: 1fr;
+  }
+
+  .divForModalText,
+  .divForModalImg {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .divForModalImg {
+    margin-top: 30px;
+  }
+
+  .divForModalText {
+    margin-top: 0;
+  }
+}
 
 @media (max-width: 500px) {
     .parentDiv {
@@ -57,8 +238,7 @@ body {
     }
   
     .elemClass {
-      width: 100%;
-      margin-top: 23x;
+      margin-top: 23px;
     }
   
     .spanStyleInElem {
