@@ -49,12 +49,13 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryName.innerText = name;
     countryContent.append(countryName);
 
-    const ccapital = data[i]['capital'];
+    let capital = data[i]['capital'];
     if (capital) {
-      const countryCapital = document.createElement('span');
-      countryCapital.innerText = `Capital - ${ccapital}`;
+      capital = capital.join('');
+      const countryCapital = document.createComment('span');
+      countryCapital.innerText = `Capital - ${capital}`;
       countryContent.append(countryCapital);
-    }
+    }    
 
     if (typeof data[i]['currencies'] === 'object') {
       const curr = Object.values(data[i]['currencies'])[0];
@@ -63,14 +64,6 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
       countryCurrency.innerText = `Currency - ${currency}`;
       countryContent.append(countryCurrency);
     } 
-
-    let capital = data[i]['capital'];
-    if (capital) {
-      capital = capital.join('');
-      const countryCapital = document.createComment('span');
-      countryCapital.innerText = `Capital - ${capital}`;
-      countryContent.append(countryCapital);
-    }
 
     const region = data[i]['region'];
     if (region) {
