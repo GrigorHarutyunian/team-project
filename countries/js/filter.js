@@ -4,7 +4,8 @@ function clear(element) {
     }
 }
 
-function changeText(element) {
+function changeText(element, event) {
+    event.stopPropagation();
     const input = document.getElementById('filter');
     input.value = element.textContent;
     filterSearch();
@@ -63,12 +64,19 @@ function filterSearch() {
     for (let c = 0; c < countryNames.length; ++c) {
         const name = document.createElement('p');
         name.innerText = countryNames[c];
-        name.setAttribute('onclick', 'changeText(this)');
+        name.setAttribute('onclick', 'changeText(this, event)');
         autocomplete.append(name);
     }
 }
 
 document.addEventListener('click', () => {
     const autocomplete = document.getElementById('autocomplete');
+    const filter = document.getElementById('filter');
+    filter.value = '';
+    filterSearch();
     clear(autocomplete);
+})
+
+document.getElementById('filter').addEventListener('click', e => {
+  e.stopImmediatePropagation();
 })
