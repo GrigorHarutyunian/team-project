@@ -9,7 +9,7 @@
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(to right top, #ff9671, #ffa553, #f6bb31, #d9d306, #a8eb12);
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
 }
 
 .books__container {
@@ -26,12 +26,39 @@
     padding: 0 80px;
 }
 
-.books__logo-wrapper {
+.books__back-home-link-wrapper {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
+    width: 60px;
+    height: 60px;
+    margin: auto 0;
+}
+
+.books__back-home-link {
+    display: block;
+    transition: all .4s ease-in-out;
+}
+
+.books__back-home-link:hover {
+    opacity: 0.6;
+}
+
+.books__back-home-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.books__logo-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
     width: 80px;
+    margin: auto 0;
 }
 
 .books__logo {
