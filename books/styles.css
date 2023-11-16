@@ -9,7 +9,7 @@
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(to right top, #ff9671, #ffa553, #f6bb31, #d9d306, #a8eb12);
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
 }
 
 .books__container {
