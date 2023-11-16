@@ -65,8 +65,14 @@ nav form input:focus-visible {
     outline: none;
 }
 
+nav a { 
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
 nav img {
-    width: 100px;
+    width: 35px;
     height: auto;
 }
 
@@ -86,7 +92,7 @@ nav img {
     width: 100%;
     height: 100%;
     margin-bottom: 35px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 65%) 0px 5px 15px;
     transition: all 1s ease-in-out;
     cursor: pointer;
 }
@@ -194,7 +200,6 @@ nav img {
     transition: all 1s ease-in-out;
 }
 
-
 .modal .content h3 {
     font-size: 27px;
     margin-bottom: 25px;
@@ -230,7 +235,6 @@ nav img {
 .title {
     font-size: 50px;
     color: #fff;
-    text-align: center;
     margin-top: 125px;
     color: #f3f3f3;
     text-shadow: 0 7.96px 8.896px #00000033, 0 -2px 1px #fff;
@@ -238,6 +242,14 @@ nav img {
     width: max-content;
     margin-right: auto;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title img {
+    width: 11%;
+    filter: drop-shadow(5px 7px 5px #949494);
 }
 
 .autocomplete_box {

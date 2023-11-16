@@ -12,7 +12,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     const flag = document.createElement('img');
     flag.setAttribute('src', flagSvg);
     countryFlag.append(flag);
-    countryFlag.setAttribute('onclick', 'openModal(this)');
+    countryFlag.setAttribute('onclick', 'openModal(this, event)');
     const cNameBox = document.createElement('div');
     cNameBox.setAttribute('class', 'country_name_box');
     const cNmae = document.createElement('h3');
@@ -27,7 +27,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
 
     const modalFlag = document.createElement('div');
     modalFlag.setAttribute('class', 'modalFlag');
-    modalFlag.setAttribute('onclick', 'closeModal(this)');
+    modalFlag.setAttribute('onclick', 'closeModal(this, event)');
     const modalFlagSvg = document.createElement('img');
     modalFlagSvg.setAttribute('src', flagSvg);
     modalFlag.append(modalFlagSvg);
@@ -35,7 +35,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
 
     const closeButton = document.createElement('div');
     closeButton.setAttribute('class', 'close_modal');
-    closeButton.setAttribute('onclick', 'closeModal(this)');
+    closeButton.setAttribute('onclick', 'closeModal(this, event)');
     const closeIcon = document.createElement('i');
     closeIcon.setAttribute('class', 'fa-solid fa-xmark');
     closeButton.append(closeIcon);
@@ -48,6 +48,11 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     const countryName = document.createElement('h3');
     countryName.innerText = name;
     countryContent.append(countryName);
+
+    const ccapital = data[i]['capital'];
+    const countryCapital = document.createElement('span');
+    countryCapital.innerText = `Capital - ${ccapital}`;
+    countryContent.append(countryCapital);
 
     if (typeof data[i]['currencies'] === 'object') {
       const curr = Object.values(data[i]['currencies'])[0];
