@@ -52,14 +52,19 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     let capital = data[i]['capital'];
     if (capital) {
       capital = capital.join('');
-      const countryCapital = document.createComment('span');
+      const countryCapital = document.createElement('span');
       countryCapital.innerText = `Capital - ${capital}`;
       countryContent.append(countryCapital);
     }    
 
     if (typeof data[i]['currencies'] === 'object') {
       const curr = Object.values(data[i]['currencies'])[0];
-      const currency = `${curr['symbol']} ${curr['name']}`;
+      let currency = `${curr['name']}`;
+
+      if (curr['symbol']){
+        currency = `${curr['symbol']} ${curr['name']}`;
+      } 
+
       const countryCurrency = document.createElement('span')
       countryCurrency.innerText = `Currency - ${currency}`;
       countryContent.append(countryCurrency);
