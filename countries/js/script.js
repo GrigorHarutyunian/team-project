@@ -86,7 +86,6 @@ const copyWrite = document.createElement("p");
 copyWrite.innerText = `${year} © Copyrights Countries`;
 footerSection.append(copyWrite);
 
-
 main.append(headerSection);
 main.append(countrieSection);
 main.append(footerSection);
@@ -132,3 +131,4 @@ window.onload = function () {
   setTimeout(load, 1000);
   setInterval(check);
 };
+

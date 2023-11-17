@@ -10,6 +10,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryFlag.setAttribute('class', 'flag');
     const flagSvg = data[i]['flags']['svg'];
     const flag = document.createElement('img');
+    flag.setAttribute('class', 'lazy_load');
     flag.setAttribute('src', flagSvg);
     countryFlag.append(flag);
     countryFlag.setAttribute('onclick', 'openModal(this, event);');

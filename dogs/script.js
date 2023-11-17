@@ -25,7 +25,6 @@ function addselectInput(data) {
       option.setAttribute("class", "optionClass");
       option.innerText = key;
       select.append(option);
-
       parentDiv.append(select);
     } else {
       const optionWithNested = document.createElement("option");
@@ -41,6 +40,7 @@ function addselectInput(data) {
     }
   }
 }
+
 function onchanged(url) {
   const select = document.querySelector(".dogsSelect");
   const divForImg = document.createElement("div");
@@ -73,3 +73,13 @@ async function init(url, urlImg) {
 }
 
 init(url, urlImg);
+
+
+function load() {
+  const load = document.getElementById("loading");
+  load.style.display = "none";
+}
+
+window.onload = function () {
+  setTimeout(load, 500);
+};
