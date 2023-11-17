@@ -5,9 +5,9 @@ body {
 .parentDiv{
   display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 100vh;
 
 }
 .back-home-icon{
@@ -26,3 +26,46 @@ body {
   background: red;
 }
 
+.dogsSelect {
+  margin-bottom: 35px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 5px;
+}
+
+.loading_spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+}
+
+.loading_spinner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.dogsSelect::-webkit-scrollbar{
+  width: 7px;
+}
+
+.dogsSelect::-webkit-scrollbar-track{
+  background: #ffffff;
+}
+
+.dogsSelect::-webkit-scrollbar-thumb{
+  -webkit-box-shadow: inset 0 0 1px rgb(0, 0, 0);
+}
+
+.dogsSelect::-webkit-scrollbar-thumb:hover{
+  background: #00c9ff; 
+}
