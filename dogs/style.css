@@ -2,7 +2,27 @@ body {
   background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
 }
 
-h1 {
-  text-align: center;
+.parentDiv{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+
+}
+.back-home-icon{
+  width: 50px;
+}
+
+
+.divImgClass{
+  background-size: cover;
+    background-repeat: no-repeat;
+    width: 491px;
+    height: 330px;
+}
+
+.optgroup2:hover{
+  background: red;
 }
 
