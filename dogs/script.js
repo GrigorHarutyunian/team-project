@@ -1,41 +1,85 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const breedSelect = document.getElementById("breedSelect");
+const url = "https://dog.ceo/api/breeds/list/all";
+const urlImg = "https://dog.ceo/api/breed";
+const parentDiv = document.querySelector(".parentDiv");
+const obj = {};
+async function getApiInfo(url) {
+  try {
+    const allNames = await fetch(url);
+    let dataDogs = await allNames.json();
 
-  fetch("https://dog.ceo/api/breeds/list/all")
-    .then(response => response.json())
-    .then(data => {
-      const defaultOption = document.createElement("option");
-      defaultOption.value = "";
-      defaultOption.text = "-- Select a breed --";
-      defaultOption.disabled = true;
-      defaultOption.selected = true;
-      breedSelect.appendChild(defaultOption);
+    return dataDogs;
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-      const breeds = Object.keys(data.message);
-      breeds.forEach(breed => {
-        const option = document.createElement("option");
-        option.value = breed;
-        option.text = breed.charAt(0).toUpperCase() + breed.slice(1);
-        breedSelect.appendChild(option);
+function addselectInput(data) {
+  const select = document.createElement("select");
+  select.setAttribute("class", "dogsSelect");
+  const optgroupBig = document.createElement("optgroup");
+  optgroupBig.label = "Dogs";
+  select.append(optgroupBig);
+  for (let key in data) {
+    if (data[key].length === 0) {
+      const option = document.createElement("option");
+      option.setAttribute("class", "optionClass");
+      option.innerText = key;
+      select.append(option);
+      parentDiv.append(select);
+    } else {
+      const optionWithNested = document.createElement("option");
+      optionWithNested.setAttribute("class", "optionWithNested");
+      optionWithNested.innerText = key;
+      optionWithNested.style.color = "red";
+      obj[key] = [];
+      data[key].forEach((val) => {
+        obj[key].push(val);
       });
-    })
-    .catch(error => console.error("Error fetching dog breeds:", error));
-
-  breedSelect.addEventListener("change", loadDogImage);
-
-  function loadDogImage() {
-    const selectedBreed = breedSelect.value;
-
-    if (selectedBreed) {
-      const apiUrl = `https://dog.ceo/api/breed/${selectedBreed}/images/random`;
-
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          const dogImage = document.getElementById("dogImage");
-          dogImage.src = data.message;
-        })
-        .catch(error => console.error("Error fetching dog image:", error));
+      select.append(optionWithNested);
+      parentDiv.append(select);
     }
   }
-});
+}
+
+function onchanged(url) {
+  const select = document.querySelector(".dogsSelect");
+  const divForImg = document.createElement("div");
+  divForImg.setAttribute("class", "divImgClass");
+  select.addEventListener("change", async (evt) => {
+    const data = await fetch(`${url}/${select.value}/images`);
+    const newListImg = await data.json();
+    const imgArr = newListImg.message;
+    const randomIndex = Math.ceil(Math.random() * imgArr.length - 1);
+    divForImg.style.backgroundImage = `url(${imgArr[randomIndex]})`;
+  });
+  parentDiv.append(divForImg);
+}
+
+function nestedOptions() {
+  const optionWithNested = document.querySelectorAll(".optionWithNested");
+  optionWithNested.forEach((val) => {
+    val.addEventListener("mauseenter", () => {
+      alert(1);
+    });
+  });
+}
+
+async function init(url, urlImg) {
+  const allDogs = await getApiInfo(url);
+  const allDogsList = allDogs.message;
+  addselectInput(allDogsList);
+  onchanged(urlImg);
+  nestedOptions();
+}
+
+init(url, urlImg);
+
+
+function load() {
+  const load = document.getElementById("loading");
+  load.style.display = "none";
+}
+
+window.onload = function () {
+  setTimeout(load, 500);
+};

@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
   <title>Dog Breed</title>
 </head>
 <body>
-
-  <h1>Dog Breed</h1>
+  <div id="loading" class="loading_spinner">
+    <img src="./images/dog.gif" alt="Loading">
+</div>
   <a class="back-home-link" href="../index.html" title="Back To Home Menu">
     <img class="back-home-icon"
          src="../images/kisspng-website-house-home-world-wide-web-computer-icons-house-clip-art-5ab036bbf19551.9166615015214977879895.png"
-         alt="Back to home icon"
-    >
-</a>
+         alt="Back to home icon">
+  </a>
 
-  <label for="breedSelect">Select a breed:</label>
-  <select id="breedSelect">
-    <option value="" disabled selected>-- Select a breed --</option>
-  </select>
-
-  <img id="dogImage" src="" alt="Dog Image 🐶🐩🐕🐕‍🦺">
-
+  <div class="parentDiv"></div>
   <script src="script.js"></script>
 </body>
 </html>
