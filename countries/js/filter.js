@@ -4,6 +4,19 @@ function clear(element) {
     }
 }
 
+function showList() {
+  const autocomplete = document.getElementById('autocomplete');
+  autocomplete.style.display = 'block';
+}
+
+function clearText() {
+  const autocomplete = document.getElementById('autocomplete');
+  const filter = document.getElementById('filter');
+  filter.value = '';
+  filterSearch();
+  clear(autocomplete);
+}
+
 function changeText(element, event) {
     event.stopPropagation();
     const input = document.getElementById('filter');
@@ -71,10 +84,7 @@ function filterSearch() {
 
 document.addEventListener('click', () => {
     const autocomplete = document.getElementById('autocomplete');
-    const filter = document.getElementById('filter');
-    filter.value = '';
-    filterSearch();
-    clear(autocomplete);
+    autocomplete.style.display = 'none';
 })
 
 document.getElementById('filter').addEventListener('click', e => {

@@ -173,3 +173,12 @@ async function init(url) {
 }
 
 init(url);
+
+function load() {
+  const load = document.getElementById("loading");
+  load.style.display = "none";
+}
+
+window.onload = function () {
+  setTimeout(load, 500);
+};
