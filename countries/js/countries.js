@@ -92,6 +92,14 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
       countryContent.append(countryLanguages);
     }
 
+    let borders = data[i]['borders'];
+    if (borders) {
+      borders = borders.join(', ');
+      const countryBorders = document.createElement('span');
+      countryBorders.innerText = `Borders - ${borders}`;
+      countryContent.append(countryBorders);
+    }
+
     const latlng = data[i]['latlng'].join(', ');
     const countryLatLng = document.createElement('span');
     countryLatLng.innerText = `Latitude & Longitude - ${latlng}`;
@@ -133,4 +141,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryGoogleMaps.innerText = 'Map';
     countryContent.append(countryGoogleMaps);
   }
+}).catch(error => {
+  const load = document.getElementById("loading");
+  load.style.display = "block";
 });
