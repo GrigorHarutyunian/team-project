@@ -204,7 +204,6 @@ body {
 }
 
 
-
 .modalCloseButton{
   width: 58px;
     position: absolute;
@@ -236,7 +235,6 @@ body {
   animation: slideDown 1.5s ease-out;
 }
 
-
 .spanStyleInElem {
   width: 100%;
   text-align: center;
@@ -244,15 +242,12 @@ body {
   padding: 10px 0;
 }
 
-
 .noMovieText{
   font-size: 32px;
   font-family: fantasy;
   color: aliceblue; 
   margin-top: 150px;
 }
-
-
 
 @keyframes slideDown {
   from {
@@ -263,7 +258,6 @@ body {
   }
 }
 
-
 @keyframes slideUp {
   from {
     transform: translateY(0);
@@ -272,7 +266,6 @@ body {
     transform: translateY(-100%);
   }
 }
-
 
 @keyframes slideIn {
   from {
@@ -310,21 +303,16 @@ body {
   }
 }
 
-
 @media (max-width: 768px) {
   .modalText {
     font-size: 11px;
   }
 }
 
-
-
 @media (max-width: 600px) {
   .modalContent {
     grid-template-columns: 1fr;
   }
-
-
 
   .divForModalText,
   .divForModalImg {
@@ -332,13 +320,9 @@ body {
     grid-row: auto;
   }
 
-
-
   .divForModalImg {
     margin-top: 30px;
   }
-
-
 
   .divForModalText {
     margin-top: 0;
