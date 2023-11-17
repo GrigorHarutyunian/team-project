@@ -58,12 +58,14 @@ function createElemsInMenu(data) {
   }
 
   drawAmenu(data);
+
   let searcText = "";
   const searchInput = document.querySelector(".searchInputClass");
   searchInput.addEventListener("keyup", async (evt) => {
     searcText = evt.target.value;
     refresh();
   });
+
   let id;
   function refresh() {
     if (id !== undefined) {

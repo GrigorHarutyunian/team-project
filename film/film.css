@@ -6,6 +6,24 @@ body {
   background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
   padding: 20px;
 }
+
+.loading_spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+}
+.loading_spinner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 .startGif{
    width:"480px";
    height:"272px"
