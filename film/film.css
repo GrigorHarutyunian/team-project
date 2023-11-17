@@ -190,9 +190,6 @@ body {
   padding: 10px 0;
 }
 
-
-
-
 @keyframes slideDown {
   from {
       transform: translateY(-100%);
@@ -202,9 +199,6 @@ body {
   }
 }
 
-
-
-
 @keyframes slideUp {
   from {
     transform: translateY(0);
@@ -213,9 +207,6 @@ body {
     transform: translateY(-100%);
   }
 }
-
-
-
 
 @keyframes slideIn {
   from {
@@ -250,22 +241,16 @@ body {
   }
 }
 
-
-
 @media (max-width: 768px) {
   .modalText {
     font-size: 11px;
   }
 }
 
-
-
 @media (max-width: 600px) {
   .modalContent {
     grid-template-columns: 1fr;
   }
-
-
 
   .divForModalText,
   .divForModalImg {
@@ -273,13 +258,9 @@ body {
     grid-row: auto;
   }
 
-
-
   .divForModalImg {
     margin-top: 30px;
   }
-
-
 
   .divForModalText {
     margin-top: 0;
