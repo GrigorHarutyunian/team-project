@@ -31,6 +31,7 @@ function addselectInput(data) {
       optionWithNested.setAttribute("class", "optionWithNested");
       optionWithNested.innerText = key;
       optionWithNested.style.color = "red";
+      console.log('mane');
       obj[key] = [];
       data[key].forEach((val) => {
         obj[key].push(val);
