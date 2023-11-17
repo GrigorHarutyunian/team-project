@@ -12,7 +12,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     const flag = document.createElement('img');
     flag.setAttribute('src', flagSvg);
     countryFlag.append(flag);
-    countryFlag.setAttribute('onclick', 'openModal(this, event)');
+    countryFlag.setAttribute('onclick', 'openModal(this, event);');
     const cNameBox = document.createElement('div');
     cNameBox.setAttribute('class', 'country_name_box');
     const cNmae = document.createElement('h3');
@@ -27,7 +27,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
 
     const modalFlag = document.createElement('div');
     modalFlag.setAttribute('class', 'modalFlag');
-    modalFlag.setAttribute('onclick', 'closeModal(this, event)');
+    modalFlag.setAttribute('onclick', 'closeModal(this, event);');
     const modalFlagSvg = document.createElement('img');
     modalFlagSvg.setAttribute('src', flagSvg);
     modalFlag.append(modalFlagSvg);
@@ -35,7 +35,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
 
     const closeButton = document.createElement('div');
     closeButton.setAttribute('class', 'close_modal');
-    closeButton.setAttribute('onclick', 'closeModal(this, event)');
+    closeButton.setAttribute('onclick', 'closeModal(this, event);');
     const closeIcon = document.createElement('i');
     closeIcon.setAttribute('class', 'fa-solid fa-xmark');
     closeButton.append(closeIcon);
@@ -49,26 +49,26 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryName.innerText = name;
     countryContent.append(countryName);
 
-    const ccapital = data[i]['capital'];
-    const countryCapital = document.createElement('span');
-    countryCapital.innerText = `Capital - ${ccapital}`;
-    countryContent.append(countryCapital);
+    let capital = data[i]['capital'];
+    if (capital) {
+      capital = capital.join('');
+      const countryCapital = document.createElement('span');
+      countryCapital.innerText = `Capital - ${capital}`;
+      countryContent.append(countryCapital);
+    }    
 
     if (typeof data[i]['currencies'] === 'object') {
       const curr = Object.values(data[i]['currencies'])[0];
-      const currency = `${curr['symbol']} ${curr['name']}`;
+      let currency = `${curr['name']}`;
+
+      if (curr['symbol']){
+        currency = `${curr['symbol']} ${curr['name']}`;
+      } 
+
       const countryCurrency = document.createElement('span')
       countryCurrency.innerText = `Currency - ${currency}`;
       countryContent.append(countryCurrency);
     } 
-
-    let capital = data[i]['capital'];
-    if (capital) {
-      capital = capital.join('');
-      const countryCapital = document.createComment('span');
-      countryCapital.innerText = `Capital - ${capital}`;
-      countryContent.append(countryCapital);
-    }
 
     const region = data[i]['region'];
     if (region) {
@@ -90,6 +90,14 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
       const countryLanguages = document.createElement('span');
       countryLanguages.innerText = `Languages - ${languages}`;
       countryContent.append(countryLanguages);
+    }
+
+    let borders = data[i]['borders'];
+    if (borders) {
+      borders = borders.join(', ');
+      const countryBorders = document.createElement('span');
+      countryBorders.innerText = `Borders - ${borders}`;
+      countryContent.append(countryBorders);
     }
 
     const latlng = data[i]['latlng'].join(', ');
@@ -133,4 +141,7 @@ fetch('https://restcountries.com/v3.1/all').then(data => data.json()).then(data 
     countryGoogleMaps.innerText = 'Map';
     countryContent.append(countryGoogleMaps);
   }
+}).catch(error => {
+  const load = document.getElementById("loading");
+  load.style.display = "block";
 });

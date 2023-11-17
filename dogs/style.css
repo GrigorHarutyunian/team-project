@@ -1,34 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url('pet\ food.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  #dogContainer {
-    background-color: rgb(38, 50, 63);
-    padding: 20px;
-    border-radius: 50px;
-    margin-top: 15px;
-  }
-  
-  #dogImage {
-    max-width: 100%;
-    height: 350px; 
-    object-fit: cover; 
-    display: none;
-  }
-  
-  label, select {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    color: rgb(231, 104, 7);
-  }
+  background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+}
+
+h1 {
+  text-align: center;
+}
+
