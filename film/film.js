@@ -85,7 +85,14 @@ function createElemsInMenu(data) {
       );
     });
     parentDiv.innerHTML = "";
-    drawAmenu(data);
+    if (!data.length) {
+      const newDiv = document.createElement("div");
+      newDiv.setAttribute("class", "noMovieText");
+      newDiv.innerText = "Sorry, there is no such movie in our list";
+      parentDiv.append(newDiv);
+    } else {
+      drawAmenu(data);
+    }
   }
 }
 
@@ -102,8 +109,20 @@ function navBar() {
   const searchInput = document.createElement("input");
   searchInput.setAttribute("class", "searchInputClass");
   searchInput.type = "search";
-  searchInput.placeholder = "search";
-  navBar.append(iconForBackManu, searchInput);
+  searchInput.placeholder = "Search";
+  const logoFilm = document.createElement("img");
+  logoFilm.setAttribute("class", "logoFilm");
+  logoFilm.src =
+    "./images/kisspng-film-reel-cinema-filmstrip-5ac7c251b8b701.3104515315230408497566.png";
+  const logoFilm2 = document.createElement("img");
+  logoFilm2.setAttribute("class", "logoFilm");
+  logoFilm2.src =
+    "./images/kisspng-film-reel-cinema-filmstrip-5ac7c251b8b701.3104515315230408497566.png";
+  const logoFilm3 = document.createElement("img");
+  logoFilm3.setAttribute("class", "logoFilm");
+  logoFilm3.src =
+    "./images/kisspng-film-reel-cinema-filmstrip-5ac7c251b8b701.3104515315230408497566.png";
+  navBar.append(iconForBackManu, searchInput, logoFilm, logoFilm2, logoFilm3);
   return navBar;
 }
 
@@ -133,7 +152,7 @@ function showModal() {
 
   const divForVideo = document.createElement("div");
   divForVideo.setAttribute("class", "divForVideo");
-  divForVideo.innerHTML = `<i class="fa-brands fa-youtube fa-beat fa-2xl" style="color: #ff0033;"></i>`;
+  divForVideo.innerHTML = `<i class="fa-brands fa-youtube fa-beat fa-2xl" style="color: #ff0033;cursor: pointer"></i>`;
 
   divForModalText.append(
     modalText,
