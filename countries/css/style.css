@@ -266,8 +266,9 @@ nav img {
     transform: translateX(-50%);
 }
 
-.autocomplete_box p{
+.autocomplete_box p {
     padding: 10px;
+    cursor: pointer;
 }
 
 .autocomplete_box p:hover {
