@@ -110,19 +110,8 @@ function navBar() {
   searchInput.setAttribute("class", "searchInputClass");
   searchInput.type = "search";
   searchInput.placeholder = "Search";
-  const logoFilm = document.createElement("img");
-  logoFilm.setAttribute("class", "logoFilm");
-  logoFilm.src =
-    "./images/kisspng-film-reel-cinema-filmstrip-5ac7c251b8b701.3104515315230408497566.png";
-  const logoFilm2 = document.createElement("img");
-  logoFilm2.setAttribute("class", "logoFilm");
-  logoFilm2.src =
-    "./images/kisspng-film-reel-cinema-filmstrip-5ac7c251b8b701.3104515315230408497566.png";
-  const logoFilm3 = document.createElement("img");
-  logoFilm3.setAttribute("class", "logoFilm");
-  logoFilm3.src =
-    "./images/kisspng-film-reel-cinema-filmstrip-5ac7c251b8b701.3104515315230408497566.png";
-  navBar.append(iconForBackManu, searchInput, logoFilm, logoFilm2, logoFilm3);
+
+  navBar.append(iconForBackManu, searchInput);
   return navBar;
 }
 

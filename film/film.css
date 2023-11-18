@@ -93,10 +93,7 @@ body {
   
 }
 
-.logoFilm{
- height: 79px;
-    width: 500px;
-}
+
 
 .searchInputClass{
   height: 50px;
@@ -123,7 +120,7 @@ body {
   background-color: transparent;
   border-bottom:1px solid rgba(255,255,255,.5);
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-  margin-right: 63px;
+  
 }
 
 
@@ -300,18 +297,24 @@ body {
 @media (max-width: 1024px) {
   .modalText {
     font-size: 13px;
+   
+    
   }
 }
 
 @media (max-width: 768px) {
   .modalText {
     font-size: 11px;
+    
+    
   }
 }
 
 @media (max-width: 600px) {
   .modalContent {
     grid-template-columns: 1fr;
+    
+    
   }
 
   .divForModalText,
@@ -333,6 +336,8 @@ body {
     .parentDiv {
       width: 100%;
       padding: 10px;
+      
+      
     }
   
     .elemClass {
