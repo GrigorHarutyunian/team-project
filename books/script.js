@@ -43,7 +43,11 @@ async function searchBooks() {
   const paginationContainer = document.getElementById("pagination");
 
   resultsContainer.innerHTML = "";
-  paginationContainer.innerHTML = "";
+  paginationContainer.innerHTML = `<div class='swiper'>
+                                      <div class='swiper-wrapper' id='swiperPaginator'></div>
+                                      <div class='swiper-button-next' onclick='nextItem();'></div>
+                                      <div class='swiper-button-prev' onclick=prevItem();></div>
+                                   </div>`;
 
   const apiUrlFirstPage = `${apiUrl}${bookInput}&limit=${resultsPerPage}`;
 
@@ -55,12 +59,16 @@ async function searchBooks() {
     const data = await response.json();
 
     displayResults(data.docs);
-
+    const swiperPagination = document.getElementById('swiperPaginator');
     const totalPages = Math.ceil(data.numFound / resultsPerPage);
     for (let i = 1; i <= totalPages; i++) {
       const pageButton = document.createElement("button");
+      const swiperSlide = document.createElement('div');
+      swiperSlide.setAttribute('class', 'swiper-slide');
+      swiperSlide.append(pageButton);
+      swiperPagination.append(swiperSlide);
       pageButton.textContent = i;
-      paginationContainer.appendChild(pageButton);
+
 
       if (i === currentPage) {
         pageButton.classList.add("active");
@@ -147,3 +155,16 @@ function load() {
 window.onload = function () {
   setTimeout(load, 500);
 };
+
+let count = 0;
+function nextItem() {
+  count++;
+  let val = count * -10
+  document.querySelector('.swiper-wrapper').style.transform = `translateX(${val}%)`;
+}
+
+function prevItem() {
+  count--;
+  let val = count * -10;
+  document.querySelector('.swiper-wrapper').style.transform = `translateX(${val}%)`;
+}

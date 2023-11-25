@@ -8,6 +8,7 @@
     <link rel="icon" href='../images/favicon.ico' type='image/x-icon'>
     <link rel="shortcut icon" href='../images/favicon.ico' type='image/x-icon'>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <title>Books</title>
 </head>
 <body>
@@ -86,13 +87,32 @@
             <div class="books__results" id="results"></div>
 
             <div class="books__pagination" id="pagination"></div>
-
         </div>
-
     </div>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./script.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 10,
+          direction: getDirection(),
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          on: {
+            resize: function () {
+              swiper.changeDirection(getDirection());
+            },
+          },
+        });
+    
+        function getDirection() {
+          var windowWidth = window.innerWidth;
+          var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+    
+          return direction;
+        }
+      </script>
+      <script src="./script.js"></script>
 </body>
 </html>
