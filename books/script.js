@@ -164,7 +164,9 @@ function nextItem() {
 }
 
 function prevItem() {
-  count--;
-  let val = count * -10;
-  document.querySelector('.swiper-wrapper').style.transform = `translateX(${val}%)`;
+  if (count > 0) {
+    count--;
+    let val = count * -10;
+    document.querySelector('.swiper-wrapper').style.transform = `translateX(${val}%)`; 
+  }
 }
