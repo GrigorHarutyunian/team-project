@@ -309,6 +309,10 @@ nav img {
     z-index: 2;
 }
 
+.loading_spinner.loading_display {
+    display: none !important;
+}
+
 .top {
     position: fixed;
     bottom: 10px;
