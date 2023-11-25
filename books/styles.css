@@ -199,7 +199,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     column-gap: 8px;
-    overflow-x: scroll;
 }
 
 .books__pagination button {
