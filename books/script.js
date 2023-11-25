@@ -48,6 +48,9 @@ async function searchBooks() {
   const apiUrlFirstPage = `${apiUrl}${bookInput}&limit=${resultsPerPage}`;
 
   try {
+    const load = document.getElementById("loading");
+    load.style.display = "block";
+    document.body.style.overflowY = "hidden";
     const response = await fetch(apiUrlFirstPage);
     const data = await response.json();
 
@@ -102,6 +105,7 @@ function updateActivePagination() {
 }
 
 function displayResults(books) {
+  load();
   const resultsContainer = document.getElementById("results");
 
   resultsContainer.innerHTML = "";
@@ -137,6 +141,7 @@ AOS.init();
 function load() {
   const load = document.getElementById("loading");
   load.style.display = "none";
+  document.body.style.overflowY = "scroll";
 }
 
 window.onload = function () {

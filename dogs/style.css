@@ -9,6 +9,7 @@
 body {
   background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
   font-family: verdana;
+  overflow: hidden;
 }
 
 .back-home-icon{
