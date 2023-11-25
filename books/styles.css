@@ -266,4 +266,20 @@ body {
         left: 20px;
         transform: rotate(90deg);
     }
+
+    .swiper-slide {
+        width: 15% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .swiper-slide {
+        width: 20% !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .swiper-slide {
+        width: 25% !important;
+    }
 }
