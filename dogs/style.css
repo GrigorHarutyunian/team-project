@@ -82,6 +82,7 @@ body {
 
 .sub_breeds_list {
   display: none;
+  transition: .3s ease-in-out;
 }
 
 .dogs_section {
@@ -110,6 +111,7 @@ body {
 
 .main_breed:hover > .sub_breeds_list {
   display: block;
+  transition: .3s ease-in-out;
 }
 
 .select {
