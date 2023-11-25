@@ -1,6 +1,8 @@
 const apiUrl = "https://openlibrary.org/search.json?q=";
 const resultsPerPage = 20;
 let currentPage = 1;
+let pagesCount = 0;
+let count = 0;
 
 document
   .getElementById("searchForm")
@@ -61,6 +63,7 @@ async function searchBooks() {
     displayResults(data.docs);
     const swiperPagination = document.getElementById('swiperPaginator');
     const totalPages = Math.ceil(data.numFound / resultsPerPage);
+    pagesCount = totalPages;
     for (let i = 1; i <= totalPages; i++) {
       const pageButton = document.createElement("button");
       const swiperSlide = document.createElement('div');
@@ -156,11 +159,12 @@ window.onload = function () {
   setTimeout(load, 500);
 };
 
-let count = 0;
 function nextItem() {
-  count++;
-  let val = count * -10
-  document.querySelector('.swiper-wrapper').style.transform = `translateX(${val}%)`;
+  if (count < pagesCount * 10) {
+    count++;
+    let val = count * -10
+    document.querySelector('.swiper-wrapper').style.transform = `translateX(${val}%)`;
+  }
 }
 
 function prevItem() {
