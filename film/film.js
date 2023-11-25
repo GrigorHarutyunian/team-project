@@ -187,6 +187,7 @@ init(url);
 function load() {
   const load = document.getElementById("loading");
   load.style.display = "none";
+  document.body.style.overflowY = "scroll";
 }
 
 window.onload = function () {
